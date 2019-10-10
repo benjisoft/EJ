@@ -4,6 +4,7 @@ const config = require("./config.json");
 var lastFired
 
 client.on("message", async message => {
+    var now = new Date();
     currentTime =  Math.round(now.getTime() / 1000);
     timeSince = lastFired - currentTime;
     if (timeSince > config.minTime) {
